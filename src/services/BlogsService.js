@@ -5,14 +5,19 @@ import { api } from "./AxiosService"
 
 
 
-class BlogsService{
+class BlogsService {
 
 
-     async getBlogs(){
-         const res = await api.get('api/blogs')
-         logger.log(res.data)
-         AppState.blogs = res.data
-     }
+    async getBlogs() {
+        const res = await api.get('api/blogs')
+        logger.log(res.data)
+        AppState.blogs = res.data
+    }
+
+    setActive(blog) {
+        AppState.activeBlog = blog
+        logger.log(blog)
+    }
 
 
 }
